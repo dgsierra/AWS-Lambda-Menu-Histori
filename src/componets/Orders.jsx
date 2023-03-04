@@ -7,8 +7,6 @@ export const Orders = () => {
   // eslint-disable-next-line no-unused-vars
   const [postOrder, result] = usePostOrderMutation()
   console.log(data)
-  console.log(isLoading)
-  console.log(result)
   const postHandler = () => {
     postOrder({
       user: {

@@ -3,6 +3,8 @@ import { useGetMenuQuery, usePostMenuMutation } from '../redux/menu'
 
 export const MenuDisplay = () => {
   const { data, isLoading } = useGetMenuQuery()
+  // ! Remove this linter after built
+  // eslint-disable-next-line no-unused-vars
   const [postMenu, result] = usePostMenuMutation()
   console.log(data)
   console.log(isLoading)

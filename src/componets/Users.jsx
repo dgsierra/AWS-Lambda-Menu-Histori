@@ -87,8 +87,8 @@ export const Users = () => {
   return (
     <div className="container flex flex-col justify-center">
       <h1 className="font-sans text-4xl bg-red-500 text-center">
-        {' '}
-        Hola {User.name}{' '}
+        {" "}
+        Hola {User.name}{" "}
       </h1>
       <form onSubmit={postHandler}>
         <label htmlFor="id">ID:</label>
@@ -103,36 +103,36 @@ export const Users = () => {
           Submit
         </button>
       </form>
-      <section>
+      <section className='flex flex-col justify-center'>
         <h1 className="text-2xl text-orange-500">Menu Disponible:</h1>
-        <div>
+        <div className="contianer flex flex-wrap justify-center p-10 gap-10">
           {filterMenu.map((item, index) => {
             return (
               <div
                 key={index}
-                className="justify-center space-x-10 border-solid border-4 gap-4 border-grey-500 space-y-10">
+                className="max-w-sm rounded overflow-hidden shadow-lg border-solid">
+                <img src={item.img} alt="" className="w-full" />
+                <h1 key={index} className="font-bold text-xl mb-2">
+                  {item.dish}
+                </h1>
                 <input
                   type="checkbox"
                   id={item.dish}
                   name={item.dish}
                   onChange={checkHandler}></input>
-                <h1 key={index} className="text-red-500">
-                  {item.dish}
-                </h1>
-                <img src={item.img} alt="" className="h-20 border-lg" />
               </div>
-            )
+            );
           })}
-          <button
-            id="submit-btn"
-            onClick={() => orderHandler(itemsOrders, User)}
-            className="hidden rounded-lg bg-blue-500 p-4">
-            Enviar Order
-          </button>
         </div>
+        <button
+          id="submit-btn"
+          onClick={() => orderHandler(itemsOrders, User)}
+          className=" rounded-lg bg-blue-500 p-4 mx-40 text-white">
+          Enviar Order
+        </button>
       </section>
     </div>
-  )
+  );
 }
 
 export default Users

@@ -86,9 +86,9 @@ export const Users = () => {
   }
   return (
     <div className="container flex flex-col justify-center">
-      <h1 className="font-sans text-4xl bg-red-500 text-center">
-        {" "}
-        Hola {User.name}{" "}
+      <h1 className="font-sans text-2xl text-center">
+        {' '}
+        Hola {User.name}{' '}
       </h1>
       <form onSubmit={postHandler}>
         <label htmlFor="id">ID:</label>
@@ -121,7 +121,7 @@ export const Users = () => {
                   name={item.dish}
                   onChange={checkHandler}></input>
               </div>
-            );
+            )
           })}
         </div>
         <button
@@ -132,7 +132,7 @@ export const Users = () => {
         </button>
       </section>
     </div>
-  );
+  )
 }
 
 export default Users

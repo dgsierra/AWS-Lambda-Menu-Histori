@@ -5,8 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 
 function App () {
   return (
-    <div className="App">
-      <h1>Comedor Histori Restaurante</h1>
+    <div className="App flex flex-col justify-center gap-10">
+      <h1 className='text-4xl font-bold'>Comedor Histori Restaurante</h1>
       <Routes>
         <Route path="/" element={<Users />} />
         <Route path="users" element={<Users />} />

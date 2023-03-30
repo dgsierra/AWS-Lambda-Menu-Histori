@@ -70,21 +70,26 @@ export const Users = () => {
   }
 
   const orderHandler = async (itemsOrders, user) => {
+    const now = new Date()
+    const date = now.toLocaleDateString()
+    const time = now.toLocaleTimeString()
     const object = { items: itemsOrders, user: user, status: false }
     const params = {
       method: 'PUT',
       body: JSON.stringify(object)
     }
-    console.log(params)
     fetch(`${url}orders`, params)
       .then((response) => response.json())
-      .then((response) => alert(response))
+      .then((response) => alert(`${response}${time} de ${date}`))
       .catch((err) => console.error(err))
     console.log(JSON.stringify(object))
   }
   return (
-    <div className='container flex flex-col justify-center'>
-      <h1 className="font-sans text-4xl bg-red-500 text-center"> Hola {User.name} </h1>
+    <div className="container flex flex-col justify-center">
+      <h1 className="font-sans text-4xl bg-red-500 text-center">
+        {' '}
+        Hola {User.name}{' '}
+      </h1>
       <form onSubmit={postHandler}>
         <label htmlFor="id">ID:</label>
         <input
@@ -120,7 +125,7 @@ export const Users = () => {
           })}
           <button
             id="submit-btn"
-            onClick={ () => orderHandler(itemsOrders, User)}
+            onClick={() => orderHandler(itemsOrders, User)}
             className="hidden rounded-lg bg-blue-500 p-4">
             Enviar Order
           </button>

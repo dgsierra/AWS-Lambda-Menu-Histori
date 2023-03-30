@@ -13,7 +13,7 @@ export const Users = () => {
   }
 
   async function getUserById (id) {
-    fetch(`https://xbgrnp37ak.execute-api.us-east-2.amazonaws.com/users/${id}`).then((response) => {
+    fetch(`${url}users/${id}`).then((response) => {
       response.json().then((data) => {
         setStateUser(data)
         handleMenu(data.role)
@@ -23,7 +23,7 @@ export const Users = () => {
   }
 
   async function getMenu () {
-    fetch('https://xbgrnp37ak.execute-api.us-east-2.amazonaws.com/items').then(
+    fetch(`${url}items`).then(
       (response) => {
         response.json().then((data) => {
           const hash = {
@@ -76,16 +76,15 @@ export const Users = () => {
       body: JSON.stringify(object)
     }
     console.log(params)
-    fetch('https://xbgrnp37ak.execute-api.us-east-2.amazonaws.com/orders', params)
+    fetch(`${url}orders`, params)
       .then((response) => response.json())
       .then((response) => alert(response))
       .catch((err) => console.error(err))
     console.log(JSON.stringify(object))
   }
   return (
-    <div>
-      <h1 className="text-red-500"> Hola {User.name} </h1>
-      <h2>{User.role}</h2>
+    <div className='container flex flex-col justify-center'>
+      <h1 className="font-sans text-4xl bg-red-500 text-center"> Hola {User.name} </h1>
       <form onSubmit={postHandler}>
         <label htmlFor="id">ID:</label>
         <input

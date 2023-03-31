@@ -12,6 +12,9 @@ This is a small front - end for testing the capabilities of AWS Lambda and AWS D
 - HTML
 - CSS
 - JSX
+- React JS
+- AWS Lambda
+- AWS DinamoDB
 - Vite
 - And Coffee
 

@@ -1,7 +1,3 @@
-```diff
-@@ #NowisNao @@
-```
-
 # AWS-Lambda-Menu-Histori
 
 # Leaderboard-APIs
